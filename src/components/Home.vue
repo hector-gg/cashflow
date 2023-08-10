@@ -51,19 +51,31 @@ export default {
                 },
                 {
                     id: 2,
-                    title: "Movimiento 3",
+                    title: "Movimiento 2",
                     description: "Comida",
                     amount: "-100",
                 },
                 {
                     id: 3,
-                    title: "Movimiento 4",
+                    title: "Movimiento 3",
                     description: "Colegiatura",
                     amount: "-1000",
                 },
                 {
                     id: 4,
+                    title: "Movimiento 4",
+                    description: "Reparación equipo",
+                    amount: "1000",
+                },
+                {
+                    id: 5,
                     title: "Movimiento 5",
+                    description: "Reparación equipo",
+                    amount: "1000",
+                },
+                {
+                    id: 6,
+                    title: "Movimiento 6",
                     description: "Reparación equipo",
                     amount: "1000",
                 },
