@@ -9,18 +9,21 @@
                 :amount="amount"
                 :total-amount="100000"
                 :date="now"
-            />
+            >
+                <template #graphic> graphic </template>
+                <template #action> Action </template>
+            </Resume>
         </template>
         <template #movements>
-            <Movements />
+            <Movements :movements="movements" />
         </template>
     </Layout>
 </template>
 <script>
 import Layout from "@/components/Layout.vue";
-import Resume from "@/components/Resume/Index.vue";
 import Header from "@/components/Header.vue";
-import Movements from "@/components/Movements.vue";
+import Resume from "@/components/Resume/Index.vue";
+import Movements from "@/components/Movements/Movements.vue";
 
 export default {
     components: {
@@ -32,7 +35,39 @@ export default {
     data() {
         return {
             amount: null,
-            now: new Date(),
+            now: null, // new Date(),
+            movements: [
+                {
+                    id: 0,
+                    title: "Movimiento 0",
+                    description: "Deposito de salario",
+                    amount: "1000",
+                },
+                {
+                    id: 1,
+                    title: "Movimiento 1",
+                    description: "Deposito de honorarios",
+                    amount: "500",
+                },
+                {
+                    id: 2,
+                    title: "Movimiento 3",
+                    description: "Comida",
+                    amount: "-100",
+                },
+                {
+                    id: 3,
+                    title: "Movimiento 4",
+                    description: "Colegiatura",
+                    amount: "-1000",
+                },
+                {
+                    id: 4,
+                    title: "Movimiento 5",
+                    description: "Reparación equipo",
+                    amount: "1000",
+                },
+            ],
         };
     },
     computed: {},
