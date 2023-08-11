@@ -30,13 +30,16 @@ const showMovements = ref(false);
     padding: 14px 0;
     box-sizing: border-box;
 }
+
 .header {
     position: fixed;
     width: 100vw;
 }
+
 .resume {
     min-height: 100vh;
 }
+
 .movements {
     z-index: 1;
     position: absolute;
@@ -47,6 +50,7 @@ const showMovements = ref(false);
     box-shadow: 0 -8px 16px #e5e5e5;
     border-radius: 24px;
 }
+
 .movements .head {
     display: flex;
     justify-content: center;
@@ -55,10 +59,12 @@ const showMovements = ref(false);
     width: 100%;
     box-sizing: border-box;
 }
+
 .movements .body {
     height: 75vh;
     width: 100%;
 }
+
 .movements .head .grip {
     width: 120px;
     height: 8px;

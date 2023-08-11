@@ -3,6 +3,7 @@
         <template #header>
             <Header></Header>
         </template>
+
         <template #resume>
             <Resume
                 :label="'Ahorro total'"
@@ -11,9 +12,12 @@
                 :date="now"
             >
                 <template #graphic> graphic </template>
-                <template #action> Action </template>
+                <template #action>
+                    <Action />
+                </template>
             </Resume>
         </template>
+
         <template #movements>
             <Movements :movements="movements" />
         </template>
@@ -24,6 +28,7 @@ import Layout from "@/components/Layout.vue";
 import Header from "@/components/Header.vue";
 import Resume from "@/components/Resume/Index.vue";
 import Movements from "@/components/Movements/Movements.vue";
+import Action from "@/components/Action.vue";
 
 export default {
     components: {
@@ -31,11 +36,12 @@ export default {
         Header,
         Resume,
         Movements,
+        Action,
     },
     data() {
         return {
             amount: null,
-            now: null, // new Date(),
+            now: new Date(), //null,
             movements: [
                 {
                     id: 0,
@@ -82,6 +88,5 @@ export default {
             ],
         };
     },
-    computed: {},
 };
 </script>

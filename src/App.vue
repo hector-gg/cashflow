@@ -7,8 +7,6 @@
             <Splashscreen />
         </template>
     </Suspense>
-
-    <Home />
 </template>
 
 <script>
