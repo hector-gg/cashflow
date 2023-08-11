@@ -12,7 +12,7 @@
                 :date="now"
             >
                 <template #graphic>
-                    <Graphic :amounts="amounts" />
+                    <Graphic :amounts="amounts" @select="select" />
                 </template>
                 <template #action>
                     <Action @create="create" />
@@ -45,7 +45,7 @@ export default {
     data() {
         return {
             amount: null,
-            now: new Date(), //null,
+            now: null,
             movements: [],
         };
     },
@@ -60,7 +60,7 @@ export default {
                 .map((m) => m.amount);
 
             return lastDays.map((m, i) => {
-                const lastMovements = lastDays.slice(0, i);
+                const lastMovements = lastDays.slice(0, i + 1);
                 return lastMovements.reduce((suma, movement) => {
                     return suma + movement;
                 }, 0);
@@ -93,6 +93,10 @@ export default {
         },
         save() {
             localStorage.setItem("movements", JSON.stringify(this.movements));
+        },
+        select(el, a) {
+            this.now = this.movements[a].time;
+            this.amount = el;
         },
     },
 };
