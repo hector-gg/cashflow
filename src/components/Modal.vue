@@ -13,7 +13,7 @@
 <script setup>
 import { defineEmist } from "vue";
 const emit = defineEmits(["otro"]);
-
+//DUDA
 const close = () => emit("otro");
 </script>
 

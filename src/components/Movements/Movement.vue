@@ -31,7 +31,7 @@ const props = defineProps({
         type: String,
     },
     amount: {
-        type: Number,
+        // type: Number,
     },
 });
 const { id, title, description, amount } = toRefs(props);

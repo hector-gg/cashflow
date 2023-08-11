@@ -25,11 +25,11 @@ export default {
             type: Number,
         },
         amount: {
-            type: Number,
+            // type: Number,
             default: null,
         },
         date: {
-            type: String,
+            // type: String,
             default: null,
         },
     },
