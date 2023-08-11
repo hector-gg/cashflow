@@ -35,7 +35,7 @@
 </template>
 
 <script setup>
-import { computed, defineProps, toRefs, ref } from "vue";
+import { computed, defineProps, defineEmits, toRefs, ref } from "vue";
 const props = defineProps({
     amounts: {
         type: Array,
@@ -69,6 +69,8 @@ const points = computed(() => {
 const showPointer = ref(false);
 const pointer = ref(0);
 
+const emit = defineEmits(["select"]);
+
 const tap = ({ target, touches }) => {
     //targe: devuelve el elemento sobre el que estamos trabajando.
     //touches: de vuelve las coordenadas.
@@ -77,6 +79,7 @@ const tap = ({ target, touches }) => {
     const elementX = target.getBoundingClientRect().x;
     const touchX = touches[0].clientX;
     pointer.value = ((touchX - elementX) * 300) / elementWith;
+    emit("select", pointer.value);
 };
 
 const untap = () => {
